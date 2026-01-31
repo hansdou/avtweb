@@ -1,0 +1,425 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║                    ÍNDICE COMPLETO DEL PROYECTO                              ║
+║                   AVT SERVICIOS GENERALES - v0 v2024                          ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+
+📖 DOCUMENTACIÓN (ORDEN RECOMENDADO DE LECTURA)
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣  LEER_PRIMERO.txt (5 min) .......................... Orientación general
+    └─ Resumen del proyecto
+    └─ Estructura básica
+    └─ Datos ya actualizados
+    └─ Próximos pasos
+
+2️⃣  GUIA_RAPIDA_IMAGENES.txt (10 min) ............... Guía rápida ejecutiva
+    └─ Checklist de implementación
+    └─ Estructura de carpetas
+    └─ Dónde van las imágenes por sección
+    └─ Errores comunes
+
+3️⃣  ESTRUCTURA_PAGINAS.txt (15 min) ................. Mapa visual del sitio
+    └─ Cada página diagramada
+    └─ Dónde exactamente va cada imagen
+    └─ Cómo se vería visualmente
+    └─ Tamaños de las imágenes
+
+4️⃣  GUIA_IMAGENES.md (30 min) ........................ Guía técnica completa
+    └─ Especificaciones de cada imagen
+    └─ Rutas y nombres de archivos
+    └─ Cambios de código necesarios
+    └─ Mejores prácticas
+    └─ Preguntas frecuentes
+
+5️⃣  EJEMPLOS_CODIGO.md (20 min) ...................... Código listo para copiar
+    └─ 8 ejemplos prácticos
+    └─ Cómo cambiar logo, servicios, equipo, etc.
+    └─ Snippets de código
+    └─ Explicaciones línea por línea
+
+Este archivo ........................... Índice y referencia rápida
+
+
+🗺️  MAPA DE SECCIONES IMPORTANTES
+═══════════════════════════════════════════════════════════════════════════════
+
+IMAGENES Y RUTAS:
+    Archivo             → Línea   → Qué cambiar
+    ─────────────────────────────────────────────────────────────────────
+    components/header.tsx       ~26    Logo (cambiar de emoji a imagen)
+    app/servicios/page.tsx      ~150   Imágenes servicios (6)
+    app/proyectos/page.tsx      ~230   Imágenes proyectos (6)
+    app/sobre-nosotros/page.tsx ~220   Fotos equipo (4)
+    app/contacto/page.tsx       ~220   Mapa (opcional)
+
+DATOS DE CONTACTO:
+    Archivo                     → Línea   → Qué está actualizado
+    ─────────────────────────────────────────────────────────────────────
+    app/contacto/page.tsx       ~55     Email, teléfono, ubicación
+    components/footer.tsx       ~70     Email, teléfono, ubicación
+
+COLORES Y ESTILOS:
+    Archivo                     → Línea   → Qué modificar
+    ─────────────────────────────────────────────────────────────────────
+    app/globals.css             ~6-18   Paleta de colores
+    app/layout.tsx              ~1-10   Metadatos SEO
+
+
+📂 ESTRUCTURA DE CARPETAS A CREAR
+═══════════════════════════════════════════════════════════════════════════════
+
+/public (Actualmente vacío - AQUÍ VAN TUS IMÁGENES)
+│
+├─ /logo
+│  ├─ logo.png ........................... Tu logo principal (150x50px)
+│  └─ logo-white.png ..................... Logo blanco (150x50px)
+│
+├─ /hero
+│  └─ hero-main.jpg ...................... Banner grande (1920x1080px)
+│
+├─ /servicios
+│  ├─ expedientes.jpg .................... Expedientes Técnicos
+│  ├─ sedapal.jpg ........................ Asesoramiento SEDAPAL
+│  ├─ trampas-grasas.jpg ................ Trampas de Grasas
+│  ├─ saneamiento.jpg ................... Obras Saneamiento
+│  ├─ diagnostico.jpg ................... Diagnóstico Técnico
+│  └─ consultoria.jpg ................... Consultoría Especializada
+│  (Todas 400x300px)
+│
+├─ /proyectos
+│  ├─ proyecto-1.jpg .................... Proyecto Integral Saneamiento
+│  ├─ proyecto-2.jpg .................... Centro Comercial Trampas
+│  ├─ proyecto-3.jpg .................... Hospital Municipal
+│  ├─ proyecto-4.jpg .................... Complejo Industrial
+│  ├─ proyecto-5.jpg .................... Condominio Miraflores
+│  └─ proyecto-6.jpg .................... Restaurante Barranco
+│  (Todas 400x300px)
+│
+└─ /equipo
+   ├─ engineer-1.jpg .................... Ing. Carlos García (250x250px cuadrado)
+   ├─ engineer-2.jpg .................... Ing. María López (250x250px cuadrado)
+   ├─ engineer-3.jpg .................... Ing. Roberto Martínez (250x250px cuadrado)
+   └─ engineer-4.jpg .................... Ing. Patricia Sánchez (250x250px cuadrado)
+
+
+🎨 PALETA DE COLORES
+═══════════════════════════════════════════════════════════════════════════════
+
+Color                    Código       Uso
+──────────────────────────────────────────────────────────────────────────
+Azul oscuro primario     #1a365d      Encabezados, botones primarios, base
+Azul secundario          #2c5282      Hover, estados secundarios
+Rojo acento              #e53e3e      Botones CTA, contacto, llamadas a acción
+Blanco                   #ffffff      Fondos, texto en azul
+Gris claro               #f7fafc      Fondos secundarios
+Gris medio               #e2e8f0      Bordes, separadores
+Gris texto               #4a5568      Cuerpo de texto
+Gris texto claro         #718096      Texto secundario
+
+Ubicación: /app/globals.css líneas 6-18
+
+
+📄 PÁGINAS DEL SITIO
+═══════════════════════════════════════════════════════════════════════════════
+
+Página                  Ruta                Archivo                    Imágenes Necesarias
+──────────────────────────────────────────────────────────────────────────────────────────
+Inicio                  /                   /app/page.tsx              - Hero banner
+                                                                        - 6 servicios
+                                                                        - 3 proyectos destacados
+
+Servicios               /servicios          /app/servicios/page.tsx     - 6 imágenes servicios
+                                                                        (400x300px c/u)
+
+Proyectos               /proyectos          /app/proyectos/page.tsx     - 6 imágenes proyectos
+                                                                        (400x300px c/u)
+
+Sobre Nosotros          /sobre-nosotros     /app/sobre-nosotros/...    - 4 fotos equipo
+                                            page.tsx                    (250x250px cuadradas)
+
+Contacto                /contacto           /app/contacto/page.tsx      - Mapa (opcional)
+
+
+⚡ CAMBIOS YA REALIZADOS (NO NECESITAS HACER NADA)
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Estructura de proyecto creada
+✅ 5 páginas funcionales implementadas
+✅ Header y Footer profesionales
+✅ Datos de contacto agregados:
+   - Email: info@avtservicios.com
+   - Teléfono: +51 (1) 234-5678
+   - WhatsApp: +51 987 654 321
+   - Ubicación: Lima, Perú
+   - Horario: Lun-Vie 9-18, Sáb 9-13
+✅ Paleta de colores original configurada
+✅ Navegación funcional
+✅ Formulario de contacto
+✅ Responsivo (móvil, tablet, desktop)
+✅ SEO optimizado
+
+
+🎯 LO QUE NECESITAS HACER
+═══════════════════════════════════════════════════════════════════════════════
+
+PASO 1: Preparar 19 imágenes en tamaños correctos
+PASO 2: Crear 5 carpetas en /public (logo, hero, servicios, proyectos, equipo)
+PASO 3: Subir imágenes a sus respectivas carpetas
+PASO 4: Actualizar código en 5 archivos (cambios pequeños, ejemplos incluidos)
+PASO 5: Verificar que todo se vea bien en preview
+PASO 6: Publicar en Vercel
+
+
+📋 CAMBIOS DE CÓDIGO REQUERIDOS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. HEADER (components/header.tsx)
+   ├─ Línea: ~26
+   ├─ Cambio: Descomentar línea del <img src="/logo/logo.png" />
+   ├─ Tiempo: 2 minutos
+   └─ Ejemplo: En EJEMPLOS_CODIGO.md #1
+
+2. SERVICIOS (app/servicios/page.tsx)
+   ├─ Línea: ~80 (array) y ~150 (JSX)
+   ├─ Cambio: Agregar "image:" a cada servicio + reemplazar emoji
+   ├─ Tiempo: 10 minutos
+   └─ Ejemplo: En EJEMPLOS_CODIGO.md #2
+
+3. PROYECTOS (app/proyectos/page.tsx)
+   ├─ Línea: ~230
+   ├─ Cambio: Reemplazar URL Unsplash por /proyectos/proyecto-${index+1}.jpg
+   ├─ Tiempo: 2 minutos
+   └─ Ejemplo: En EJEMPLOS_CODIGO.md #3
+
+4. SOBRE NOSOTROS (app/sobre-nosotros/page.tsx)
+   ├─ Línea: ~220 (array) y ~280 (JSX)
+   ├─ Cambio: Agregar "image:" a cada miembro + reemplazar emoji
+   ├─ Tiempo: 10 minutos
+   └─ Ejemplo: En EJEMPLOS_CODIGO.md #4
+
+5. CONTACTO (app/contacto/page.tsx)
+   ├─ Línea: ~220
+   ├─ Cambio: OPCIONAL - Agregar mapa si lo deseas
+   ├─ Tiempo: 5 minutos (opcional)
+   └─ Ejemplo: En EJEMPLOS_CODIGO.md #6
+
+
+🎬 INICIO RÁPIDO (30 minutos)
+═══════════════════════════════════════════════════════════════════════════════
+
+ 1. Lee GUIA_RAPIDA_IMAGENES.txt (5 min)
+    └─ Entiende la estructura general
+
+ 2. Prepara las 19 imágenes (10 min)
+    ├─ Logo 150x50px
+    ├─ Hero 1920x1080px
+    ├─ Servicios 400x300px (6)
+    ├─ Proyectos 400x300px (6)
+    └─ Equipo 250x250px cuadrados (4)
+
+ 3. Crea carpetas en /public (2 min)
+    ├─ /public/logo
+    ├─ /public/hero
+    ├─ /public/servicios
+    ├─ /public/proyectos
+    └─ /public/equipo
+
+ 4. Sube imágenes (5 min)
+    └─ Arrastra archivos a cada carpeta
+
+ 5. Copia cambios de código (3 min)
+    └─ Usa ejemplos de EJEMPLOS_CODIGO.md
+
+ 6. Verifica en preview (1 min)
+    └─ Revisa que todo se vea bien
+
+✅ TOTAL: 26 minutos (redondeado a 30 min)
+
+
+📱 PÁGINAS Y SUS CONTENIDOS
+═══════════════════════════════════════════════════════════════════════════════
+
+INICIO (/)
+├─ Hero Section
+│  ├─ Título: "Especialistas en Saneamiento"
+│  ├─ Descripción: Lo que hace AVT
+│  ├─ Imagen: hero-main.jpg (opcional - puede ser gradiente)
+│  └─ Botón: "Solicita una Consulta"
+├─ 6 Servicios en tarjetas
+│  └─ Cada uno con imagen (400x300px)
+├─ 3 Proyectos destacados
+├─ Zonas de cobertura
+└─ CTA final
+
+SERVICIOS (/servicios)
+├─ Hero Section
+├─ 6 Servicios detallados con:
+│  ├─ Imagen (400x300px)
+│  ├─ Título
+│  ├─ Descripción
+│  └─ Características (checkmarks)
+└─ CTA "Solicita información"
+
+PROYECTOS (/proyectos)
+├─ Hero Section
+├─ Estadísticas (200+ proyectos, 15+ años, etc.)
+├─ 6 Proyectos con:
+│  ├─ Imagen (400x300px)
+│  ├─ Título
+│  ├─ Categoría y año
+│  ├─ Descripción detallada
+│  └─ Puntos destacados
+└─ CTA "Tienes un proyecto similar?"
+
+SOBRE NOSOTROS (/sobre-nosotros)
+├─ Hero Section
+├─ Historia y descripción
+├─ Misión, Visión, Valores
+├─ 4 Miembros del equipo con:
+│  ├─ Foto circular (250x250px cuadrado)
+│  ├─ Nombre
+│  ├─ Puesto
+│  └─ Biografía
+├─ Certificaciones
+└─ CTA "¿Quieres trabajar con nosotros?"
+
+CONTACTO (/contacto)
+├─ Hero Section
+├─ 4 Cards con info (ubicación, email, teléfono, horario)
+├─ Formulario de contacto con campos:
+│  ├─ Nombre
+│  ├─ Email
+│  ├─ Teléfono
+│  ├─ Empresa
+│  ├─ Asunto (dropdown)
+│  └─ Mensaje
+├─ Mapa (opcional)
+└─ Información de contacto
+
+
+🔍 BÚSQUEDA DE REFERENCIAS
+═══════════════════════════════════════════════════════════════════════════════
+
+¿Dónde está...?
+
+El logo del header?
+    → components/header.tsx, línea ~26
+    → Actual: <div className="w-12 h-12...">AVT</div>
+    → Descomenta: <img src="/logo/logo.png" ... />
+
+Las imágenes de servicios?
+    → app/servicios/page.tsx, línea ~80 (array) y ~150 (JSX)
+    → Busca: const services = [
+    → Reemplaza: {icon: '...'} por {image: '/servicios/...'}
+
+Las imágenes de proyectos?
+    → app/proyectos/page.tsx, línea ~230
+    → Busca: unsplash.com
+    → Reemplaza por: /proyectos/proyecto-${index + 1}.jpg
+
+Las fotos del equipo?
+    → app/sobre-nosotros/page.tsx, línea ~220 (array) y ~280 (JSX)
+    → Busca: const team = [
+    → Reemplaza: {icon: '...'} por {image: '/equipo/...'}
+
+Los datos de contacto?
+    → app/contacto/page.tsx, línea ~55
+    → components/footer.tsx, línea ~70
+
+La paleta de colores?
+    → app/globals.css, línea ~6-18
+
+El SEO y metadatos?
+    → app/layout.tsx, línea ~1-10
+
+
+✨ CARACTERÍSTICAS IMPLEMENTADAS
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Diseño profesional y moderno
+✅ Responsive en todos los dispositivos
+✅ Navegación intuitiva y funcional
+✅ Header sticky (fijo al scrollear)
+✅ Animaciones suaves
+✅ Formulario de contacto funcional
+✅ SEO optimizado
+✅ Paleta de colores coherente
+✅ Tipografía profesional
+✅ Accesibilidad (alt text en imágenes, etc.)
+✅ Rendimiento optimizado
+✅ Código limpio y bien estructurado
+
+
+🔗 RUTAS DEL SITIO
+═══════════════════════════════════════════════════════════════════════════════
+
+Página Principal:     www.avtservicios.com/
+Servicios:            www.avtservicios.com/servicios
+Proyectos:            www.avtservicios.com/proyectos
+Sobre Nosotros:       www.avtservicios.com/sobre-nosotros
+Contacto:             www.avtservicios.com/contacto
+
+(Nota: www.avtservicios.com es un ejemplo. Tu dominio puede ser diferente)
+
+
+📦 DESCARGA E INSTALACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+Para descargar y usar localmente:
+
+1. Haz clic en "Download ZIP" en v0
+2. Extrae el archivo
+3. Abre terminal en la carpeta del proyecto
+4. Corre: npm install
+5. Luego: npm run dev
+6. Abre: http://localhost:3000
+
+
+🚀 DESPLEGAR A VERCEL
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Haz clic en "Publish" en v0
+2. Conecta con GitHub (si lo deseas)
+3. Selecciona Vercel como platform
+4. Autoriza y listo
+5. Tu sitio estará en línea en minutos
+
+El dominio será algo como: avtservicios-nextjs.vercel.app
+Luego puedes conectar tu dominio personalizado.
+
+
+💬 INFORMACIÓN DE CONTACTO
+═══════════════════════════════════════════════════════════════════════════════
+
+Email:     info@avtservicios.com
+Teléfono:  +51 (1) 234-5678
+WhatsApp:  +51 987 654 321
+Ubicación: Lima, Perú
+Horario:   Lun-Vie: 9:00-18:00 | Sábado: 9:00-13:00
+
+Estos datos ya están en:
+  • Página de contacto
+  • Cards de información
+  • Footer
+
+Puedes cambiarlos en GUIA_IMAGENES.md sección "Actualizar contacto"
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                              PRÓXIMOS PASOS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Lee LEER_PRIMERO.txt (orientación)
+2. Prepara tus imágenes en tamaños correctos
+3. Lee GUIA_RAPIDA_IMAGENES.txt (guía rápida)
+4. Sube imágenes a /public/
+5. Copia cambios de código de EJEMPLOS_CODIGO.md
+6. Verifica en preview
+7. Publica en Vercel
+
+¡Tu sitio profesional estará listo en menos de 1 hora!
+
+═══════════════════════════════════════════════════════════════════════════════

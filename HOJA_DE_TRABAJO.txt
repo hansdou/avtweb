@@ -1,0 +1,422 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║                         HOJA DE TRABAJO DEL PROYECTO                         ║
+║                              Sigue Paso a Paso                               ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+
+PARTE 1: PREPARACIÓN DE IMÁGENES
+═══════════════════════════════════════════════════════════════════════════════
+
+Prepara las siguientes imágenes (puedes hacerlo en Paint, Photoshop, Canva, etc.):
+
+LOGO PRINCIPAL (2 versiones)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Imagen 1: Logo Color                                                        │
+│ ├─ Tamaño: 150 x 50 píxeles                                                │
+│ ├─ Formato: PNG o JPG                                                      │
+│ ├─ Nombre: logo.png                                                         │
+│ ├─ Ubicación: /public/logo/logo.png                                         │
+│ ├─ Descripción: Tu logo en colores normales                               │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<50KB)                           │
+│                                                                             │
+│ Imagen 2: Logo Blanco                                                       │
+│ ├─ Tamaño: 150 x 50 píxeles                                                │
+│ ├─ Formato: PNG (preferiblemente)                                          │
+│ ├─ Nombre: logo-white.png                                                   │
+│ ├─ Ubicación: /public/logo/logo-white.png                                   │
+│ ├─ Descripción: Tu logo en blanco (para footer)                           │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<50KB)                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+HERO BANNER (Banner Principal)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Imagen 3: Hero Principal                                                    │
+│ ├─ Tamaño: 1920 x 1080 píxeles                                             │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: hero-main.jpg                                                    │
+│ ├─ Ubicación: /public/hero/hero-main.jpg                                    │
+│ ├─ Descripción: Banner grande para el inicio de la página                 │
+│ ├─ Sugerencia: Imagen de infraestructura, saneamiento o ciudad            │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<300KB)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+SERVICIOS (6 imágenes)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Imagen 4: Expedientes Técnicos                                              │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: expedientes.jpg                                                  │
+│ ├─ Ubicación: /public/servicios/expedientes.jpg                             │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 5: Asesoramiento SEDAPAL                                             │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: sedapal.jpg                                                      │
+│ ├─ Ubicación: /public/servicios/sedapal.jpg                                 │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 6: Trampas de Grasas                                                 │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: trampas-grasas.jpg                                               │
+│ ├─ Ubicación: /public/servicios/trampas-grasas.jpg                          │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 7: Obras de Saneamiento                                              │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: saneamiento.jpg                                                  │
+│ ├─ Ubicación: /public/servicios/saneamiento.jpg                             │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 8: Diagnóstico Técnico                                               │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: diagnostico.jpg                                                  │
+│ ├─ Ubicación: /public/servicios/diagnostico.jpg                             │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 9: Consultoría Especializada                                         │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: consultoria.jpg                                                  │
+│ ├─ Ubicación: /public/servicios/consultoria.jpg                             │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+PROYECTOS (6 imágenes)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Imagen 10: Proyecto 1 - Integral Saneamiento                                │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: proyecto-1.jpg                                                   │
+│ ├─ Ubicación: /public/proyectos/proyecto-1.jpg                              │
+│ ├─ Descripción: "Proyecto Integral de Saneamiento - La Molina"            │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 11: Proyecto 2 - Centro Comercial Trampas                            │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: proyecto-2.jpg                                                   │
+│ ├─ Ubicación: /public/proyectos/proyecto-2.jpg                              │
+│ ├─ Descripción: "Centro Comercial - Sistema de Trampas de Grasas"        │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 12: Proyecto 3 - Hospital Municipal                                  │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: proyecto-3.jpg                                                   │
+│ ├─ Ubicación: /public/proyectos/proyecto-3.jpg                              │
+│ ├─ Descripción: "Hospital Municipal - Proyecto de Saneamiento"            │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 13: Proyecto 4 - Complejo Industrial                                 │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: proyecto-4.jpg                                                   │
+│ ├─ Ubicación: /public/proyectos/proyecto-4.jpg                              │
+│ ├─ Descripción: "Complejo Industrial - Expediente Técnico"                │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 14: Proyecto 5 - Condominio Miraflores                               │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: proyecto-5.jpg                                                   │
+│ ├─ Ubicación: /public/proyectos/proyecto-5.jpg                              │
+│ ├─ Descripción: "Condominio - Remodelación Sanitaria"                     │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+│                                                                             │
+│ Imagen 15: Proyecto 6 - Restaurante Barranco                                │
+│ ├─ Tamaño: 400 x 300 píxeles                                               │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: proyecto-6.jpg                                                   │
+│ ├─ Ubicación: /public/proyectos/proyecto-6.jpg                              │
+│ ├─ Descripción: "Restaurante - Trampa de Grasa y Aire"                    │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<100KB)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+EQUIPO (4 imágenes) - ⚠️ DEBEN SER CUADRADAS
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Imagen 16: Ing. Carlos García                                               │
+│ ├─ Tamaño: 250 x 250 píxeles (CUADRADO)                                    │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: engineer-1.jpg                                                   │
+│ ├─ Ubicación: /public/equipo/engineer-1.jpg                                 │
+│ ├─ Descripción: Foto de Director General                                   │
+│ ├─ 🔴 IMPORTANTE: Debe ser PERFECTAMENTE CUADRADA (250x250)               │
+│ └─ Checklist: ☐ Preparado ☐ Cuadrado ☐ Optimizado (<80KB)                │
+│                                                                             │
+│ Imagen 17: Ing. María López                                                 │
+│ ├─ Tamaño: 250 x 250 píxeles (CUADRADO)                                    │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: engineer-2.jpg                                                   │
+│ ├─ Ubicación: /public/equipo/engineer-2.jpg                                 │
+│ ├─ Descripción: Foto de Jefe de Proyectos                                 │
+│ ├─ 🔴 IMPORTANTE: Debe ser PERFECTAMENTE CUADRADA (250x250)               │
+│ └─ Checklist: ☐ Preparado ☐ Cuadrado ☐ Optimizado (<80KB)                │
+│                                                                             │
+│ Imagen 18: Ing. Roberto Martínez                                            │
+│ ├─ Tamaño: 250 x 250 píxeles (CUADRADO)                                    │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: engineer-3.jpg                                                   │
+│ ├─ Ubicación: /public/equipo/engineer-3.jpg                                 │
+│ ├─ Descripción: Foto de Especialista SEDAPAL                              │
+│ ├─ 🔴 IMPORTANTE: Debe ser PERFECTAMENTE CUADRADA (250x250)               │
+│ └─ Checklist: ☐ Preparado ☐ Cuadrado ☐ Optimizado (<80KB)                │
+│                                                                             │
+│ Imagen 19: Ing. Patricia Sánchez                                            │
+│ ├─ Tamaño: 250 x 250 píxeles (CUADRADO)                                    │
+│ ├─ Formato: JPG                                                            │
+│ ├─ Nombre: engineer-4.jpg                                                   │
+│ ├─ Ubicación: /public/equipo/engineer-4.jpg                                 │
+│ ├─ Descripción: Foto de Supervisora de Obras                              │
+│ ├─ 🔴 IMPORTANTE: Debe ser PERFECTAMENTE CUADRADA (250x250)               │
+│ └─ Checklist: ☐ Preparado ☐ Cuadrado ☐ Optimizado (<80KB)                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+MAPA (Opcional)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Imagen 20: Mapa de Lima (OPCIONAL)                                          │
+│ ├─ Tamaño: 800 x 600 píxeles                                               │
+│ ├─ Formato: PNG o JPG                                                      │
+│ ├─ Nombre: mapa-lima.png                                                    │
+│ ├─ Ubicación: /public/hero/mapa-lima.png                                    │
+│ ├─ Descripción: Mapa de zonas de servicio                                  │
+│ ├─ Nota: Puedes también usar Google Maps embebido (sin imagen)            │
+│ └─ Checklist: ☐ Preparado ☐ Optimizado (<150KB)                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+RESUMEN IMÁGENES:
+  ☐ Logo color:           1 imagen    (150x50px)
+  ☐ Logo blanco:          1 imagen    (150x50px)
+  ☐ Hero banner:          1 imagen    (1920x1080px)
+  ☐ Servicios:            6 imágenes  (400x300px c/u)
+  ☐ Proyectos:            6 imágenes  (400x300px c/u)
+  ☐ Equipo:               4 imágenes  (250x250px CUADRADAS)
+  ☐ Mapa (opcional):      1 imagen    (800x600px)
+  ─────────────────────────────────────────────
+  TOTAL OBLIGATORIO:      19 imágenes
+  TOTAL CON MAPA:         20 imágenes
+
+
+PARTE 2: CREAR CARPETAS EN /public
+═══════════════════════════════════════════════════════════════════════════════
+
+Crea la siguiente estructura de carpetas:
+
+/public
+├─ /logo
+│  ├─ logo.png
+│  └─ logo-white.png
+│  ☐ Carpeta creada
+│
+├─ /hero
+│  └─ hero-main.jpg
+│  ☐ Carpeta creada
+│
+├─ /servicios
+│  ├─ expedientes.jpg
+│  ├─ sedapal.jpg
+│  ├─ trampas-grasas.jpg
+│  ├─ saneamiento.jpg
+│  ├─ diagnostico.jpg
+│  └─ consultoria.jpg
+│  ☐ Carpeta creada
+│
+├─ /proyectos
+│  ├─ proyecto-1.jpg
+│  ├─ proyecto-2.jpg
+│  ├─ proyecto-3.jpg
+│  ├─ proyecto-4.jpg
+│  ├─ proyecto-5.jpg
+│  └─ proyecto-6.jpg
+│  ☐ Carpeta creada
+│
+└─ /equipo
+   ├─ engineer-1.jpg
+   ├─ engineer-2.jpg
+   ├─ engineer-3.jpg
+   └─ engineer-4.jpg
+   ☐ Carpeta creada
+
+
+PARTE 3: SUBIR IMÁGENES
+═══════════════════════════════════════════════════════════════════════════════
+
+Pasos para subir en v0:
+
+1. En v0, haz clic en el + junto a "public" en la estructura de archivos
+2. Crea las 5 carpetas (logo, hero, servicios, proyectos, equipo)
+3. Entra a cada carpeta y sube las imágenes
+
+Upload Progress:
+
+☐ /public/logo/
+   ☐ logo.png                        (Subido)
+   ☐ logo-white.png                  (Subido)
+
+☐ /public/hero/
+   ☐ hero-main.jpg                   (Subido)
+
+☐ /public/servicios/
+   ☐ expedientes.jpg                 (Subido)
+   ☐ sedapal.jpg                     (Subido)
+   ☐ trampas-grasas.jpg              (Subido)
+   ☐ saneamiento.jpg                 (Subido)
+   ☐ diagnostico.jpg                 (Subido)
+   ☐ consultoria.jpg                 (Subido)
+
+☐ /public/proyectos/
+   ☐ proyecto-1.jpg                  (Subido)
+   ☐ proyecto-2.jpg                  (Subido)
+   ☐ proyecto-3.jpg                  (Subido)
+   ☐ proyecto-4.jpg                  (Subido)
+   ☐ proyecto-5.jpg                  (Subido)
+   ☐ proyecto-6.jpg                  (Subido)
+
+☐ /public/equipo/
+   ☐ engineer-1.jpg                  (Subido)
+   ☐ engineer-2.jpg                  (Subido)
+   ☐ engineer-3.jpg                  (Subido)
+   ☐ engineer-4.jpg                  (Subido)
+
+☐ /public/hero/ (si es necesario)
+   ☐ mapa-lima.png                   (Subido - Opcional)
+
+
+PARTE 4: ACTUALIZAR CÓDIGO
+═══════════════════════════════════════════════════════════════════════════════
+
+Tienes que hacer 5 cambios pequeños de código. Consulta TARJETA_REFERENCIA_RAPIDA.txt
+para ver exactamente qué cambiar.
+
+Cambio #1: Logo en Header
+  Archivo:        components/header.tsx
+  Línea:          ~26
+  Cambio:         Descomentar línea del <img src="/logo/logo.png" />
+  ☐ Completado
+
+Cambio #2: Servicios (imagen)
+  Archivo:        app/servicios/page.tsx
+  Línea:          ~80 (agregar a array)
+  Línea:          ~150 (reemplazar emoji)
+  ☐ Completado
+
+Cambio #3: Proyectos (imagen)
+  Archivo:        app/proyectos/page.tsx
+  Línea:          ~230
+  Cambio:         Reemplazar URL Unsplash por /proyectos/proyecto-${index+1}.jpg
+  ☐ Completado
+
+Cambio #4: Equipo (fotos)
+  Archivo:        app/sobre-nosotros/page.tsx
+  Línea:          ~220 (agregar a array)
+  Línea:          ~280 (reemplazar emoji)
+  ☐ Completado
+
+Cambio #5: Mapa (Opcional)
+  Archivo:        app/contacto/page.tsx
+  Línea:          ~220
+  ☐ Completado (o saltado si es opcional)
+
+
+PARTE 5: VERIFICACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+Verifica que todo funciona correctamente:
+
+Página Principal (/)
+  ☐ Logo aparece correctamente
+  ☐ Hero banner se ve bien
+  ☐ 6 cards de servicios tienen imágenes
+  ☐ Proyectos destacados tienen imágenes
+  ☐ Botones funcionan
+  ☐ Se ve bien en móvil
+
+Página Servicios (/servicios)
+  ☐ Hero banner correcto
+  ☐ 6 tarjetas de servicios con imágenes
+  ☐ Imágenes de buena calidad
+  ☐ Texto legible
+  ☐ Botones funcionan
+
+Página Proyectos (/proyectos)
+  ☐ 6 proyectos con imágenes
+  ☐ Imágenes cargan correctamente
+  ☐ Descripción clara
+  ☐ Botón CTA funciona
+
+Página Sobre Nosotros (/sobre-nosotros)
+  ☐ 4 fotos del equipo circular (no alargadas)
+  ☐ Nombres y puestos correcto
+  ☐ Certificaciones visibles
+
+Página Contacto (/contacto)
+  ☐ Información de contacto correcta
+  ☐ Formulario funciona
+  ☐ Mapa visible (si lo agregaste)
+
+General
+  ☐ Ningún error en consola (F12)
+  ☐ Todas las imágenes cargan rápido
+  ☐ No hay imágenes borrosas
+  ☐ Todo se ve profesional
+
+
+PARTE 6: PUBLICAR
+═══════════════════════════════════════════════════════════════════════════════
+
+Pasos finales:
+
+1. ☐ Todo está completado y verificado
+2. ☐ Haz clic en "Publish" (esquina superior derecha)
+3. ☐ Conecta con GitHub (si lo deseas)
+4. ☐ Selecciona Vercel como plataforma
+5. ☐ Espera a que se despliegue (2-3 minutos)
+6. ☐ Verifica que el sitio está en línea
+7. ☐ Copia la URL de tu sitio: ___________________________
+8. ☐ Comparte la URL con tu equipo/clientes
+
+URL de tu sitio:  ___________________________________________
+
+Dominio personalizado (próximo paso):
+Cuando hayas comprado un dominio, apúntalo a Vercel.
+Consulta: https://vercel.com/docs/concepts/projects/domains
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                            NOTAS FINALES
+═══════════════════════════════════════════════════════════════════════════════
+
+Problemas comunes y soluciones:
+
+Problema:        Las imágenes no aparecen
+Solución:        Verifica que la ruta sea /servicios/... (con / al inicio)
+
+Problema:        Las fotos del equipo se ven alargadas
+Solución:        Deben ser EXACTAMENTE 250x250px (cuadradas), recórtalas
+
+Problema:        Las imágenes se ven borrosas
+Solución:        Usa imágenes de mayor resolución
+
+Problema:        Tardo mucho en cargar
+Solución:        Optimiza las imágenes (máximo 100-200KB c/u)
+
+Problema:        El logo no aparece en el header
+Solución:        Asegúrate de haber descomentado la línea correcta
+
+
+═══════════════════════════════════════════════════════════════════════════════
+                      ¡LISTO PARA COMENZAR!
+═══════════════════════════════════════════════════════════════════════════════
+
+Tiempo estimado total: 1-2 horas
+
+Siguiendo esta hoja de trabajo tendrás tu sitio completamente funcional.
+
+Próximo paso: Prepara tus imágenes en tamaños correctos.
+
+═══════════════════════════════════════════════════════════════════════════════

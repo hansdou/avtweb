@@ -1,0 +1,271 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    GUÍA RÁPIDA: DÓNDE VAN LAS IMÁGENES
+═══════════════════════════════════════════════════════════════════════════════
+
+📌 PASO 1: ESTRUCTURA DE CARPETAS EN /public
+───────────────────────────────────────────────────────────────────────────────
+
+Crea esta estructura en /public:
+
+/public
+├── /logo
+│   ├── logo.png              (Tu logo principal)
+│   └── logo-white.png        (Tu logo versión blanca para footer)
+│
+├── /hero
+│   └── hero-main.jpg         (Imagen grande para banner principal)
+│
+├── /servicios
+│   ├── expedientes.jpg       (Para Expedientes Técnicos)
+│   ├── sedapal.jpg
+│   ├── trampas-grasas.jpg
+│   ├── saneamiento.jpg
+│   ├── diagnostico.jpg
+│   └── consultoria.jpg
+│
+├── /proyectos
+│   ├── proyecto-1.jpg        (6 imágenes de proyectos)
+│   ├── proyecto-2.jpg
+│   ├── proyecto-3.jpg
+│   ├── proyecto-4.jpg
+│   ├── proyecto-5.jpg
+│   └── proyecto-6.jpg
+│
+└── /equipo
+    ├── engineer-1.jpg        (Foto del Ing. Carlos García)
+    ├── engineer-2.jpg        (Foto de la Ing. María López)
+    ├── engineer-3.jpg        (Foto del Ing. Roberto Martínez)
+    └── engineer-4.jpg        (Foto de la Ing. Patricia Sánchez)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📄 PÁGINA PRINCIPAL (app/page.tsx)
+═══════════════════════════════════════════════════════════════════════════════
+
+SECCIÓN 1: BANNER HERO
+├─ Dónde: Línea ~95
+├─ Imagen: hero-main.jpg (1920x1080px)
+├─ Código actual: <section style={{ background: 'linear-gradient...' }}>
+└─ Para cambiar: Reemplaza "linear-gradient" por "url(/hero/hero-main.jpg)"
+
+SECCIÓN 2: SERVICIOS DESTACADOS
+├─ Dónde: Línea ~180
+├─ Imágenes: 6 íconos/imágenes (80x80px)
+├─ Busca: <div className="text-5xl mb-4">{service.icon}</div>
+└─ Reemplaza con: <img src={service.image} alt="" className="w-20 h-20 mb-4" />
+
+SECCIÓN 3: ZONAS DE COBERTURA
+├─ Dónde: Línea ~260
+├─ Imagen: mapa-lima.png (800x600px) - OPCIONAL
+├─ Busca: <div className="bg-gradient-to-r from-blue-50">Zonas de servicio</div>
+└─ Reemplaza por imagen o mantén como está
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🛠️ PÁGINA DE SERVICIOS (app/servicios/page.tsx)
+═══════════════════════════════════════════════════════════════════════════════
+
+SECCIÓN: TARJETAS DE SERVICIOS
+├─ Dónde: Línea ~150
+├─ Imágenes: 6 imágenes (400x300px cada una)
+├─ Array "services" necesita:
+│  {
+│    image: '/servicios/expedientes.jpg',  ← AGREGAR ESTA LÍNEA
+│    title: 'Expedientes Técnicos',
+│    description: '...',
+│    features: [...]
+│  }
+└─ En el JSX reemplaza emoji por: <img src={service.image} alt={service.title} />
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🏗️ PÁGINA DE PROYECTOS (app/proyectos/page.tsx) ✅ YA PARCIALMENTE CONFIGURADO
+═══════════════════════════════════════════════════════════════════════════════
+
+SECCIÓN: GALERÍA DE PROYECTOS
+├─ Dónde: Línea ~230
+├─ Imágenes: 6 fotos de proyectos (400x300px)
+├─ Estado actual: Usa imágenes de Unsplash (URLs externas)
+├─ Para usar TUS imágenes: Cambia esta línea:
+│
+│  ACTUAL:  src={`https://images.unsplash.com/photo-${...}`}
+│  NUEVO:   src={`/proyectos/proyecto-${index + 1}.jpg`}
+│
+└─ Listo! Ahora mostrará tus imágenes locales
+
+
+═══════════════════════════════════════════════════════════════════════════════
+👥 PÁGINA SOBRE NOSOTROS (app/sobre-nosotros/page.tsx)
+═══════════════════════════════════════════════════════════════════════════════
+
+SECCIÓN 1: BANNER HERO
+├─ Dónde: Línea ~50
+├─ Imagen: Similar a inicio (puedes reutilizar hero-main.jpg)
+└─ Cambio: Igual que en página principal
+
+SECCIÓN 2: EQUIPO (FOTOS DE PERSONAS)
+├─ Dónde: Línea ~220
+├─ Imágenes: 4 fotos cuadradas (250x250px)
+├─ Array "team" necesita:
+│  {
+│    image: '/equipo/engineer-1.jpg',     ← AGREGAR ESTA LÍNEA
+│    name: 'Ing. Carlos García',
+│    role: '...',
+│    bio: '...'
+│  }
+├─ En el JSX reemplaza emoji por:
+│  <img src={member.image} alt={member.name} 
+│       className="w-24 h-24 rounded-full object-cover" />
+└─ 🔴 IMPORTANTE: Las fotos deben ser CUADRADAS y faciales nítidas
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📧 PÁGINA DE CONTACTO (app/contacto/page.tsx)
+═══════════════════════════════════════════════════════════════════════════════
+
+SECCIÓN: MAPA DE UBICACIÓN
+├─ Dónde: Línea ~220
+├─ Imagen: mapa-lima.png (800x600px) - OPCIONAL
+├─ Opción A - Imagen estática:
+│  <img src="/hero/mapa-lima.png" alt="Ubicación" className="w-full h-96" />
+├─ Opción B - Google Maps embebido (RECOMENDADO):
+│  <iframe src="https://www.google.com/maps/embed?pb=..." />
+└─ También se actualizó: Números de teléfono y emails reales
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🔧 COMPONENTES (Header, Footer)
+═══════════════════════════════════════════════════════════════════════════════
+
+HEADER - LOGO (components/header.tsx)
+├─ Dónde: Línea ~20
+├─ Actual: <div className="w-12 h-12...">AVT</div>  ← Texto en cuadrado azul
+├─ Con imagen:
+│  <img src="/logo/logo.png" alt="AVT" className="h-10 w-auto" />
+├─ Instrucción: Hay comentarios en el código indicando dónde descomenta
+└─ Tamaño recomendado: 150x50px
+
+
+FOOTER - LOGO OPCIONAL (components/footer.tsx)
+├─ Dónde: Línea ~15
+├─ Para agregar logo blanco antes del texto:
+│  <img src="/logo/logo-white.png" alt="AVT" className="h-8 w-auto mb-4" />
+└─ Tamaño: 150x50px (versión blanca)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🎯 CHECKLIST DE IMPLEMENTACIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+PASO 1: PREPARAR IMÁGENES
+  ☐ Logo principal (150x50px) → /logo/logo.png
+  ☐ Logo blanco (150x50px) → /logo/logo-white.png
+  ☐ Banner Hero (1920x1080px) → /hero/hero-main.jpg
+  ☐ 6 imágenes servicios (400x300px) → /servicios/*.jpg
+  ☐ 6 imágenes proyectos (400x300px) → /proyectos/*.jpg
+  ☐ 4 fotos equipo (250x250px, cuadradas) → /equipo/*.jpg
+
+PASO 2: CREAR CARPETAS EN /public
+  ☐ Crear /public/logo
+  ☐ Crear /public/hero
+  ☐ Crear /public/servicios
+  ☐ Crear /public/proyectos
+  ☐ Crear /public/equipo
+
+PASO 3: SUBIR IMÁGENES
+  ☐ Subir logo a /public/logo/
+  ☐ Subir hero a /public/hero/
+  ☐ Subir servicios a /public/servicios/
+  ☐ Subir proyectos a /public/proyectos/
+  ☐ Subir fotos equipo a /public/equipo/
+
+PASO 4: ACTUALIZAR CÓDIGO
+  ☐ Header: Descomentar línea del logo (línea ~26)
+  ☐ Servicios: Agregar "image:" en array services
+  ☐ Servicios: Reemplazar emoji por <img> en JSX
+  ☐ Proyectos: Cambiar URL de Unsplash a /proyectos/proyecto-${index+1}.jpg
+  ☐ Sobre Nosotros: Agregar "image:" en array team
+  ☐ Sobre Nosotros: Reemplazar emoji por <img> en JSX
+  ☐ Contacto: (Opcional) Agregar mapa o imagen
+
+PASO 5: VERIFICAR
+  ☐ Las imágenes cargan correctamente
+  ☐ Los tamaños se ven bien
+  ☐ No hay errores en consola
+  ☐ Todo se ve bien en móvil también
+
+
+═══════════════════════════════════════════════════════════════════════════════
+⚡ TIPS RÁPIDOS
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ Nombres de archivos: usa minúsculas y guiones (proyecto-saneamiento-2023.jpg)
+✓ Tamaños: Optimiza las imágenes (máx 200KB cada una)
+✓ Formato: JPG para fotos, PNG para logos/iconos
+✓ Alt text: Siempre describe la imagen en alt="" (SEO + accesibilidad)
+✓ Rutas: Siempre comienzan con "/" ej: /servicios/nombre.jpg (NO ./servicios/)
+✓ Responsive: Las imágenes se adaptan automáticamente, no necesitas hacer nada
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🚨 ERRORES COMUNES
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ Imagen no aparece:
+   Causa: Ruta incorrecta (ej: servicios/file.jpg EN VEZ DE /servicios/file.jpg)
+   Solución: Verifica que la ruta comience con "/"
+
+❌ Imagen muy pequeña/grande:
+   Causa: Tamaño incorrecto en className
+   Solución: Ajusta w-20 h-20 o w-full h-48 según necesites
+
+❌ Imagen borrosa:
+   Causa: Imagen original muy pequeña
+   Solución: Usa imágenes de mayor resolución (min 400x300px)
+
+❌ El logo no aparece en header:
+   Causa: Ruta /public/logo/logo.png no existe
+   Solución: Verifica que hayas creado el archivo en la ruta correcta
+
+❌ Las fotos del equipo se ven alargadas:
+   Causa: No son cuadradas (300x400px en vez de 250x250px)
+   Solución: Recorta las fotos para que sean cuadradas
+
+
+═══════════════════════════════════════════════════════════════════════════════
+💬 INFORMACIÓN DE CONTACTO ACTUALIZADA
+═══════════════════════════════════════════════════════════════════════════════
+
+Ya están agregados en el código:
+
+Email:     info@avtservicios.com
+Teléfono:  +51 (1) 234-5678
+WhatsApp:  +51 987 654 321
+Ubicación: Lima, Perú (Cobertura en toda la ciudad)
+Horario:   Lun-Vie: 9:00-18:00 | Sábado: 9:00-13:00
+
+Están en:
+  • Página de contacto (/app/contacto/page.tsx)
+  • Footer (components/footer.tsx)
+  • Cards de información en contacto
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📚 RECURSOS ADICIONALES
+═══════════════════════════════════════════════════════════════════════════════
+
+Consulta estos archivos para más información:
+
+  1. GUIA_IMAGENES.md ........... Guía completa y detallada (430+ líneas)
+  2. EJEMPLOS_CODIGO.md ........ Ejemplos prácticos de código (390+ líneas)
+  3. GUIA_RAPIDA_IMAGENES.txt .. Este archivo (resumen rápido)
+
+¿Te falta información? Lee la GUIA_IMAGENES.md
+
+═══════════════════════════════════════════════════════════════════════════════
+¡LISTO PARA COMENZAR! 🚀
+═══════════════════════════════════════════════════════════════════════════════
+
+Sigue el CHECKLIST DE IMPLEMENTACIÓN y tendrás tu sitio completo en minutos.
+
+¿Preguntas? Revisa los ejemplos de código en EJEMPLOS_CODIGO.md
