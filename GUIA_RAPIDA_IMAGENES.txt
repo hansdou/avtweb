@@ -239,7 +239,6 @@ PASO 5: VERIFICAR
 Ya están agregados en el código:
 
 Email:     info@avtservicios.com
-Teléfono:  +51 (1) 234-5678
 WhatsApp:  +51 987 654 321
 Ubicación: Lima, Perú (Cobertura en toda la ciudad)
 Horario:   Lun-Vie: 9:00-18:00 | Sábado: 9:00-13:00

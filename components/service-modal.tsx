@@ -40,12 +40,14 @@ export default function ServiceModal({
             className="flex items-start justify-between p-8 border-b"
             style={{ borderColor: '#e2e8f0' }}
           >
-            <div className="flex items-center gap-4">
-              <img 
-                src={service.icon || "/placeholder.svg"} 
-                alt={service.title}
-                className="w-20 h-20 object-contain"
-              />
+            <div className="flex items-center gap-6">
+              <div className="w-40 h-40 overflow-hidden rounded-lg flex-shrink-0">
+                <img
+                  src={service.icon || "/placeholder.svg"}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div>
                 <h2
                   className="text-3xl font-bold"

@@ -1,67 +1,68 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import WhatsAppButton from '@/components/whatsapp-button'
 import Link from 'next/link'
+import { projects as allProjects } from '@/lib/projects-data'
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const heroImages = [
+    '/images/hero/home-1.jpg',
+    '/images/hero/home-2.jpg',
+    '/images/hero/home-3.jpg',
+  ]
+
+  // Auto-advance carousel every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
   const services = [
     {
       title: 'Expedientes Técnicos',
       description:
         'Elaboración de expedientes técnicos completos y profesionales para proyectos de saneamiento e infraestructura.',
-      icon: '/icons/expedientes.png',
+      number: '01',
     },
     {
       title: 'Asesoramiento SEDAPAL',
       description:
         'Asesoramiento especializado en trámites y requisitos ante SEDAPAL para proyectos de agua potable y alcantarillado.',
-      icon: '/icons/sedapal.png',
+      number: '02',
     },
     {
       title: 'Trampas de Grasas',
       description:
         'Diseño, instalación y mantenimiento de trampas de grasas para establecimientos comerciales y restaurantes.',
-      icon: '/icons/trampas-grasas.png',
+      number: '03',
     },
     {
       title: 'Obras de Saneamiento',
       description:
         'Ejecución de obras completas de saneamiento con supervisión técnica y cumplimiento de normas.',
-      icon: '/icons/obras-saneamiento.png',
+      number: '04',
     },
     {
       title: 'Consultoría Técnica',
       description:
         'Consultoría en proyectos de agua potable, alcantarillado y sistemas de saneamiento en general.',
-      icon: '/icons/consultoria.png',
+      number: '05',
     },
     {
       title: 'Estudios de Factibilidad',
       description:
         'Realización de estudios técnicos y de factibilidad para proyectos de infraestructura sanitaria.',
-      icon: '/icons/factibilidad.png',
+      number: '06',
     },
   ]
 
-  const projects = [
-    {
-      title: 'Proyecto Integral de Saneamiento - Distrito A',
-      category: 'Infraestructura',
-      description:
-        'Implementación de sistema completo de agua potable y alcantarillado en urbanización residencial.',
-    },
-    {
-      title: 'Centro Comercial - Sistema de Trampas de Grasas',
-      category: 'Comercial',
-      description:
-        'Diseño e instalación de sistema de trampas de grasas para 50+ locales gastronómicos.',
-    },
-    {
-      title: 'Hospital Municipal - Proyecto de Saneamiento',
-      category: 'Sanitario',
-      description:
-        'Modernización del sistema de saneamiento de hospital con tratamiento de aguas residuales.',
-    },
-  ]
+  // Mostrar solo los primeros 3 proyectos en la página de inicio
+  const featuredProjects = allProjects.slice(0, 3)
 
   const zones = [
     {
@@ -86,15 +87,24 @@ export default function Home() {
     <main className="bg-white">
       <Header />
 
-      {/* Hero Section */}
-      <section
-        className="min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-20"
-        style={{
-          background: 'linear-gradient(135deg, #1a365d 0%, #2c5282 100%)',
-        }}
-      >
-        <div className="absolute inset-0 opacity-5" />
+      {/* Hero Section with Carousel */}
+      <section className="min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-20">
+        {/* Carousel Background Images */}
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+            style={{
+              backgroundImage: `url('${image}')`,
+              opacity: currentSlide === index ? 1 : 0,
+            }}
+          />
+        ))}
 
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-black opacity-50" />
+
+        {/* Content */}
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center hero-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Especialistas en Saneamiento e Infraestructura
@@ -121,6 +131,21 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className="w-3 h-3 rounded-full transition-all"
+              style={{
+                backgroundColor: currentSlide === index ? '#e53e3e' : 'rgba(255, 255, 255, 0.5)',
+              }}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </section>
 
       {/* Services Section */}
@@ -144,18 +169,21 @@ export default function Home() {
                   borderTop: '4px solid #1a365d',
                 }}
               >
-                <img 
-                  src={service.icon || "/placeholder.svg"} 
-                  alt={service.title}
-                  className="w-16 h-16 mb-4 mx-auto object-contain"
-                />
+                <div
+                  className="text-5xl font-bold mb-4 text-center"
+                  style={{ color: '#e53e3e' }}
+                >
+                  {service.number}
+                </div>
                 <h3
-                  className="text-xl font-bold mb-3"
+                  className="text-xl font-bold mb-3 text-center"
                   style={{ color: '#1a365d' }}
                 >
                   {service.title}
                 </h3>
-                <p style={{ color: '#4a5568' }}>{service.description}</p>
+                <p className="text-center" style={{ color: '#4a5568' }}>
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
@@ -185,16 +213,17 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {projects.map((project, index) => (
+            {featuredProjects.map((project) => (
               <div
-                key={index}
+                key={project.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2"
               >
-                <div
-                  className="h-40 flex items-center justify-center text-gray-400 text-sm"
-                  style={{ backgroundColor: '#f7fafc' }}
-                >
-                  Imagen del Proyecto
+                <div className="h-40 overflow-hidden">
+                  <img
+                    src={project.image || '/placeholder.svg'}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <span
@@ -286,6 +315,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }

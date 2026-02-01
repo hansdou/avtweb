@@ -1,5 +1,6 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import WhatsAppButton from '@/components/whatsapp-button'
 import Link from 'next/link'
 
 export const metadata = {
@@ -87,12 +88,18 @@ export default function SobreNosotros() {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="min-h-80 flex items-center justify-center text-white relative overflow-hidden pt-20"
-        style={{
-          background: 'linear-gradient(135deg, #1a365d 0%, #2c5282 100%)',
-        }}
-      >
+      <section className="min-h-80 flex items-center justify-center text-white relative overflow-hidden pt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/hero/sobre-nosotros.jpg')",
+          }}
+        />
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-black opacity-50" />
+
+        {/* Content */}
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center hero-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Sobre Nosotros</h1>
           <p className="text-xl md:text-2xl opacity-90">
@@ -338,6 +345,7 @@ export default function SobreNosotros() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }

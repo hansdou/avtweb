@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import WhatsAppButton from '@/components/whatsapp-button'
 import ServiceModal from '@/components/service-modal'
 import Link from 'next/link'
 
@@ -25,7 +26,7 @@ export default function Servicios() {
   const detailedServices = [
     {
       title: 'Expedientes Técnicos',
-      icon: '/icons/expedientes.png',
+      icon: '/images/servicios/expedientes.jpg',
       description:
         'Elaboración profesional de expedientes técnicos completos para proyectos de saneamiento e infraestructura',
       features: [
@@ -38,7 +39,7 @@ export default function Servicios() {
     },
     {
       title: 'Asesoramiento SEDAPAL',
-      icon: '/icons/sedapal.png',
+      icon: '/images/servicios/sedapal.png',
       description:
         'Especialistas en trámites, requisitos y procedimientos ante SEDAPAL',
       features: [
@@ -51,7 +52,7 @@ export default function Servicios() {
     },
     {
       title: 'Trampas de Grasas',
-      icon: '/icons/trampas-grasas.png',
+      icon: '/images/servicios/trampas-grasas.jpg',
       description:
         'Diseño, instalación, mantenimiento y reparación de sistemas de trampas de grasas',
       features: [
@@ -64,7 +65,7 @@ export default function Servicios() {
     },
     {
       title: 'Obras de Saneamiento',
-      icon: '/icons/obras-saneamiento.png',
+      icon: '/images/servicios/obras-saneamiento.jpg',
       description:
         'Ejecución integral de proyectos de agua potable, alcantarillado y saneamiento',
       features: [
@@ -77,7 +78,7 @@ export default function Servicios() {
     },
     {
       title: 'Consultoría Técnica',
-      icon: '/icons/consultoria.png',
+      icon: '/images/servicios/consultoria.jpg',
       description:
         'Consultoría especializada en proyectos de infraestructura sanitaria',
       features: [
@@ -90,7 +91,7 @@ export default function Servicios() {
     },
     {
       title: 'Estudios de Factibilidad',
-      icon: '/icons/factibilidad.png',
+      icon: '/images/servicios/factibilidad.jpg',
       description:
         'Realización de estudios técnicos y de viabilidad para proyectos sanitarios',
       features: [
@@ -134,15 +135,18 @@ export default function Servicios() {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="min-h-80 flex items-center justify-center text-white relative overflow-hidden pt-20"
-        style={{
-          background: 'linear-gradient(135deg, #1a365d 0%, #2c5282 100%)',
-        }}
-      >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" />
-        </div>
+      <section className="min-h-80 flex items-center justify-center text-white relative overflow-hidden pt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/hero/servicios.jpg')",
+          }}
+        />
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-black opacity-50" />
+
+        {/* Content */}
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center hero-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Nuestros Servicios</h1>
           <p className="text-xl md:text-2xl opacity-90">
@@ -164,11 +168,13 @@ export default function Servicios() {
                   borderTop: '5px solid #1a365d',
                 }}
               >
-                <img 
-                  src={service.icon || "/placeholder.svg"} 
-                  alt={service.title}
-                  className="w-20 h-20 mb-4 object-contain"
-                />
+                <div className="w-full h-40 mb-6 overflow-hidden rounded-lg">
+                  <img
+                    src={service.icon || "/placeholder.svg"}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3
                   className="text-2xl font-bold mb-3"
                   style={{ color: '#1a365d' }}
@@ -288,6 +294,7 @@ export default function Servicios() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }

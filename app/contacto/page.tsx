@@ -1,51 +1,57 @@
 'use client'
 
 import React from "react"
-
-import { useState } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import WhatsAppButton from '@/components/whatsapp-button'
 
 export default function Contacto() {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    telefono: '',
-    empresa: '',
-    asunto: '',
-    mensaje: '',
-  })
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle')
 
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Aquí iría la lógica para enviar el email
-    console.log('Formulario enviado:', formData)
-    setIsSubmitted(true)
-    setTimeout(() => {
-      setFormData({
-        nombre: '',
-        email: '',
-        telefono: '',
-        empresa: '',
-        asunto: '',
-        mensaje: '',
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    // Guardar referencia al formulario antes del async
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const data = {
+      nombre: formData.get('nombre'),
+      email: formData.get('email'),
+      telefono: formData.get('telefono'),
+      empresa: formData.get('empresa'),
+      asunto: formData.get('asunto'),
+      mensaje: formData.get('mensaje'),
+    }
+
+    try {
+      console.log('📤 Enviando formulario...')
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       })
-      setIsSubmitted(false)
-    }, 3000)
+
+      console.log('📥 Respuesta recibida:', response.status, response.ok)
+      const result = await response.json()
+      console.log('📄 Datos de respuesta:', result)
+
+      if (response.ok && result.success) {
+        console.log('✅ Éxito - mostrando mensaje de confirmación')
+        setSubmitStatus('success')
+        form.reset() // Usar la referencia guardada
+      } else {
+        console.log('❌ Error - mostrando mensaje de error')
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('❌ Error en catch:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -76,12 +82,18 @@ export default function Contacto() {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="min-h-80 flex items-center justify-center text-white relative overflow-hidden pt-20"
-        style={{
-          background: 'linear-gradient(135deg, #1a365d 0%, #2c5282 100%)',
-        }}
-      >
+      <section className="min-h-80 flex items-center justify-center text-white relative overflow-hidden pt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/hero/contacto.png')",
+          }}
+        />
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-black opacity-50" />
+
+        {/* Content */}
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center hero-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Contactanos</h1>
           <p className="text-xl md:text-2xl opacity-90">
@@ -134,19 +146,25 @@ export default function Contacto() {
             </p>
           </div>
 
-          {isSubmitted && (
-            <div
-              className="mb-8 p-4 rounded-lg text-white text-center animate-pulse"
-              style={{ backgroundColor: '#4CAF50' }}
-            >
-              ✓ Mensaje enviado correctamente. Nos pondremos en contacto pronto.
-            </div>
-          )}
-
           <form
             onSubmit={handleSubmit}
             className="bg-gray-50 p-8 rounded-lg shadow-md"
           >
+            {/* Success Message */}
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 rounded-lg bg-green-50 border border-green-200">
+                <p className="text-green-800 font-semibold">✅ Mensaje enviado con éxito</p>
+                <p className="text-green-600 text-sm mt-1">Te contactaremos pronto</p>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 rounded-lg bg-red-50 border border-red-200">
+                <p className="text-red-800 font-semibold">❌ Error al enviar el mensaje</p>
+                <p className="text-red-600 text-sm mt-1">Por favor, intenta nuevamente</p>
+              </div>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label
@@ -160,8 +178,6 @@ export default function Contacto() {
                   type="text"
                   id="nombre"
                   name="nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2"
                   style={{
@@ -182,8 +198,6 @@ export default function Contacto() {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2"
                   style={{
@@ -207,8 +221,6 @@ export default function Contacto() {
                   type="tel"
                   id="telefono"
                   name="telefono"
-                  value={formData.telefono}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2"
                   style={{
                     borderColor: '#e2e8f0',
@@ -228,8 +240,6 @@ export default function Contacto() {
                   type="text"
                   id="empresa"
                   name="empresa"
-                  value={formData.empresa}
-                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2"
                   style={{
                     borderColor: '#e2e8f0',
@@ -250,8 +260,6 @@ export default function Contacto() {
               <select
                 id="asunto"
                 name="asunto"
-                value={formData.asunto}
-                onChange={handleChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2"
                 style={{
@@ -279,8 +287,6 @@ export default function Contacto() {
               <textarea
                 id="mensaje"
                 name="mensaje"
-                value={formData.mensaje}
-                onChange={handleChange}
                 required
                 rows={6}
                 className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 resize-none"
@@ -293,39 +299,18 @@ export default function Contacto() {
 
             <button
               type="submit"
-              className="w-full py-3 rounded-lg text-white font-semibold transition-all hover:shadow-xl"
+              disabled={isSubmitting}
+              className="w-full py-3 rounded-lg text-white font-semibold transition-all hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               style={{ backgroundColor: '#e53e3e' }}
             >
-              Enviar Mensaje
+              {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
             </button>
           </form>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2
-            className="text-3xl font-bold text-center mb-12"
-            style={{ color: '#1a365d' }}
-          >
-            Ubicación
-          </h2>
-          <div className="rounded-lg overflow-hidden shadow-lg h-96">
-            <div
-              className="w-full h-full flex items-center justify-center text-gray-400"
-              style={{ backgroundColor: '#e8f4f8' }}
-            >
-              <div className="text-center">
-                <div className="text-6xl mb-4">◉</div>
-                <p>Mapa de ubicación (integración pendiente)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }

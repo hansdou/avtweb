@@ -1,5 +1,7 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import WhatsAppButton from '@/components/whatsapp-button'
+import { projects } from '@/lib/projects-data'
 
 export const metadata = {
   title: 'Proyectos | AVT Servicios Generales',
@@ -8,99 +10,6 @@ export const metadata = {
 }
 
 export default function Proyectos() {
-  const projects = [
-    {
-      title: 'Proyecto Integral de Saneamiento - Urbanización Residencial',
-      category: 'Infraestructura',
-      year: '2023',
-      location: 'Distrito de La Molina',
-      description:
-        'Implementación del sistema completo de agua potable y alcantarillado para urbanización de 200+ viviendas. Incluye diseño de redes, instalación de tuberías principales y conexiones domiciliarias.',
-      highlights: [
-        'Diseño integral de redes de agua y desagüe',
-        '15 km de tuberías instaladas',
-        '200+ conexiones domiciliarias',
-        'Sistema de tratamiento de agua',
-        'Cumplimiento total de normativas SEDAPAL',
-      ],
-    },
-    {
-      title: 'Centro Comercial - Sistema de Trampas de Grasas',
-      category: 'Comercial',
-      year: '2023',
-      location: 'San Isidro',
-      description:
-        'Diseño e instalación de sistema integral de trampas de grasas para centro comercial con 50+ establecimientos gastronómicos. Sistema con capacidad de 5000 L/día.',
-      highlights: [
-        '8 trampas de grasas de última tecnología',
-        'Sistema de monitoreo automático',
-        'Mantenimiento programado mensual',
-        'Certificados ambientales obtenidos',
-        'Cero multas por incumplimiento',
-      ],
-    },
-    {
-      title: 'Hospital Municipal - Proyecto de Saneamiento',
-      category: 'Sanitario',
-      year: '2023',
-      location: 'Cono Sur',
-      description:
-        'Modernización completa del sistema de saneamiento de hospital con 150 camas. Incluyó diseño e instalación de plant de tratamiento de aguas residuales hospitalarias.',
-      highlights: [
-        'Planta de tratamiento de 50 m³/día',
-        'Sistema de desinfección UV',
-        'Cumplimiento de normas DE.S. 003-97',
-        'Supervisión técnica 24/7',
-        'Capacitación al personal hospitalario',
-      ],
-    },
-    {
-      title: 'Complejo Industrial - Expediente Técnico Completo',
-      category: 'Industrial',
-      year: '2022',
-      location: 'Cono Norte',
-      description:
-        'Elaboración de expediente técnico completo para proyecto de saneamiento en complejo industrial con áreas de producción, oficinas y almacenes.',
-      highlights: [
-        'Estudios de factibilidad realizados',
-        'Diseños CAD en 3D',
-        'Presupuesto detallado',
-        'Cronograma de ejecución',
-        'Aprobación de SEDAPAL en primer intento',
-      ],
-    },
-    {
-      title: 'Condominio de Viviendas - Remodelación Sanitaria',
-      category: 'Residencial',
-      year: '2022',
-      location: 'Miraflores',
-      description:
-        'Remodelación integral del sistema de saneamiento de condominio de 80 departamentos. Incluye reemplazo de tuberías antiguas y modernización de instalaciones.',
-      highlights: [
-        'Evaluación sin dañar estructura',
-        'Instalación de tuberías PVC de calidad',
-        'Pruebas de hermeticidad',
-        'Garantía extendida de 5 años',
-        'Mínimas molestias a residentes',
-      ],
-    },
-    {
-      title: 'Restaurante - Trampa de Grasa y Aire',
-      category: 'Comercial',
-      year: '2022',
-      location: 'Barranco',
-      description:
-        'Instalación de sistema de trampa de grasas y trampa de aire para restaurante de comida marina de alta gama con capacidad para 150 clientes.',
-      highlights: [
-        'Trampa de grasa de 2000 L',
-        'Trampa de aire integrada',
-        'Tratamiento de olores',
-        'Cumplimiento de normas municipales',
-        'Mantenimiento mensual incluido',
-      ],
-    },
-  ]
-
   const stats = [
     { value: '200+', label: 'Proyectos Completados' },
     { value: '15+', label: 'Años de Experiencia' },
@@ -113,12 +22,18 @@ export default function Proyectos() {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="min-h-80 flex items-center justify-center text-white relative overflow-hidden pt-20"
-        style={{
-          background: 'linear-gradient(135deg, #1a365d 0%, #2c5282 100%)',
-        }}
-      >
+      <section className="min-h-80 flex items-center justify-center text-white relative overflow-hidden pt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/hero/proyectos.jpg')",
+          }}
+        />
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-black opacity-50" />
+
+        {/* Content */}
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center hero-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Nuestros Proyectos
@@ -152,9 +67,9 @@ export default function Proyectos() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="space-y-12">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <div
-                key={index}
+                key={project.id}
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all"
               >
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
@@ -225,24 +140,9 @@ export default function Proyectos() {
                     </div>
                   </div>
 
-                  <div
-                    className="h-72 rounded-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50"
-                    style={{ backgroundColor: '#e8f4f8' }}
-                  >
+                  <div className="h-72 rounded-lg overflow-hidden">
                     <img
-                      src={`https://images.unsplash.com/photo-${
-                        index === 0
-                          ? '1581092918056-a94e45d46c8e?w=500&q=80'
-                          : index === 1
-                            ? '1560264357-8d9766c4b5ee?w=500&q=80'
-                            : index === 2
-                              ? '1576091160550-2173dba999ef?w=500&q=80'
-                              : index === 3
-                                ? '1581092915962-8a917e38cc9c?w=500&q=80'
-                                : index === 4
-                                  ? '1581092163562-40f08663644d?w=500&q=80'
-                                  : '1576091160699-112122207ee5?w=500&q=80'
-                      }`}
+                      src={project.image || '/placeholder.svg'}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
@@ -277,6 +177,7 @@ export default function Proyectos() {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </main>
   )
 }

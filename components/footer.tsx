@@ -64,7 +64,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-300">
               <li>Lima, Perú</li>
               <li>info@avtservicios.com</li>
-              <li>+51 (1) 234-5678</li>
               <li>+51 987 654 321</li>
             </ul>
           </div>

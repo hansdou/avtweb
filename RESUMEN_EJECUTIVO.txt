@@ -189,7 +189,6 @@ Equipo Incluido:
 
 Contacto Actualizado:
   • Email: info@avtservicios.com
-  • Teléfono: +51 (1) 234-5678
   • WhatsApp: +51 987 654 321
   • Horario: Lun-Vie 9-18h, Sábado 9-13h
 
@@ -273,7 +272,6 @@ Costo Estimado:
 Ya están configurados en el código:
 
 Email Principal:       info@avtservicios.com
-Teléfono Fijo:         +51 (1) 234-5678
 Teléfono Móvil/WA:     +51 987 654 321
 Ubicación:             Lima, Perú
 Cobertura:             Toda la ciudad de Lima
