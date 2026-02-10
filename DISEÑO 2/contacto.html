@@ -1,0 +1,202 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta a AVT Servicios Generales para evaluar tu proyecto de saneamiento o infraestructura en Lima.">
+  <title>Contacto | AVT Servicios Generales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" data-nav>
+        <span class="brand-mark" aria-hidden="true">AVT</span>
+        <span class="brand-text">
+          <span class="brand-title">Servicios Generales</span>
+          <span class="brand-subtitle">Saneamiento e infraestructura</span>
+        </span>
+      </a>
+
+      <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menú">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="index.html" data-nav>Inicio</a>
+        <a href="servicios.html" data-nav>Servicios</a>
+        <a href="proyectos.html" data-nav>Proyectos</a>
+        <a href="sobre-nosotros.html" data-nav>Sobre nosotros</a>
+        <a href="contacto.html" data-nav class="btn btn-accent">Contacto</a>
+      </nav>
+    </div>
+
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Navegación móvil" hidden>
+      <div class="mobile-menu-inner">
+        <a href="index.html" data-nav>Inicio</a>
+        <a href="servicios.html" data-nav>Servicios</a>
+        <a href="proyectos.html" data-nav>Proyectos</a>
+        <a href="sobre-nosotros.html" data-nav>Sobre nosotros</a>
+        <a href="contacto.html" data-nav class="btn btn-accent">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-static">
+      <img src="assets/images/hero/contacto.png" alt="Contacto AVT" class="hero-static-image">
+      <div class="container hero-static-content hero-project-outline">
+        <span class="eyebrow">Atención directa</span>
+        <h1>Conversemos sobre tu proyecto de saneamiento</h1>
+        <p>Escríbenos para evaluar requerimientos, resolver dudas técnicas y definir una propuesta adecuada a tu necesidad.</p>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <div class="contact-grid">
+          <article class="card contact-card">
+            <img src="assets/images/icons/contact-location.png" alt="Ubicación">
+            <h3>Ubicación</h3>
+            <p>Lima, Perú<br>Cobertura urbana integral</p>
+          </article>
+
+          <article class="card contact-card">
+            <img src="assets/images/icons/contact-email.png" alt="Correo electrónico">
+            <h3>Email</h3>
+            <p><a data-contact-email-link href="mailto:atiliovastor@gmail.com" data-contact-email>atiliovastor@gmail.com</a></p>
+          </article>
+
+          <article class="card contact-card">
+            <img src="assets/images/icons/contact-phone.png" alt="Teléfono">
+            <h3>Teléfono</h3>
+            <p data-contact-phone>+51 912-428-831</p>
+          </article>
+
+          <article class="card contact-card">
+            <img src="assets/images/icons/contact-schedule.png" alt="Horario de atención">
+            <h3>Horario</h3>
+            <p>Lun - Vie: 9:00 a 20:00<br>Sáb: 9:00 a 13:00</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container max-form">
+        <div class="section-head center">
+          <span class="eyebrow">Formulario</span>
+          <h2>Envíanos tu consulta</h2>
+          <p class="text-lead">Comparte los datos de tu proyecto y te responderemos con una orientación inicial.</p>
+        </div>
+
+        <div class="form-wrap">
+          <div id="formStatus" class="status-box" role="status" aria-live="polite"></div>
+
+          <form id="contactForm" method="POST" action="https://formspree.io/f/your-form-id" novalidate>
+            <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="Nueva consulta desde sitio HTML AVT">
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">Nombre completo *</label>
+                <input class="input" id="nombre" name="nombre" type="text" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="email">Correo electrónico *</label>
+                <input class="input" id="email" name="email" type="email" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="telefono">Teléfono</label>
+                <input class="input" id="telefono" name="telefono" type="tel" autocomplete="tel">
+              </div>
+              <div class="field">
+                <label for="empresa">Empresa</label>
+                <input class="input" id="empresa" name="empresa" type="text" autocomplete="organization">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="asunto">Asunto *</label>
+              <select class="select" id="asunto" name="asunto" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Expedientes técnicos">Expedientes técnicos</option>
+                <option value="Asesoramiento SEDAPAL">Asesoramiento SEDAPAL</option>
+                <option value="Trampas de grasas">Trampas de grasas</option>
+                <option value="Obras de saneamiento">Obras de saneamiento</option>
+                <option value="Consultoría técnica">Consultoría técnica</option>
+                <option value="Consulta general">Consulta general</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Mensaje *</label>
+              <textarea class="textarea" id="mensaje" name="mensaje" required minlength="20" placeholder="Describe tu necesidad, ubicación y plazos estimados."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-accent">Enviar mensaje</button>
+              <a class="btn btn-outline js-whatsapp-link" href="https://wa.me/51912428831" target="_blank" rel="noopener noreferrer">Ir a WhatsApp</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main">
+      <div>
+        <h3>AVT Servicios Generales</h3>
+        <p>Especialistas en saneamiento e infraestructura con enfoque profesional para empresas y familias en Lima.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="servicios.html">Expedientes técnicos</a></li>
+          <li><a href="servicios.html">Asesoramiento SEDAPAL</a></li>
+          <li><a href="servicios.html">Trampas de grasas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Lima, Perú</li>
+          <li><a data-contact-email-link href="mailto:atiliovastor@gmail.com" data-contact-email>atiliovastor@gmail.com</a></li>
+          <li data-contact-phone>+51 912-428-831</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span class="js-current-year">2026</span> AVT Servicios Generales. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fab js-whatsapp-link" href="https://wa.me/51912428831" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.34zM12.05 22a9.9 9.9 0 0 1-5.03-1.37l-.36-.22-3.74.99.99-3.65-.24-.37a9.86 9.86 0 0 1-1.5-5.27C2.16 6.67 6.6 2.23 12.05 2.23c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99C21.94 17.57 17.5 22 12.05 22z"/>
+    </svg>
+  </a>
+
+  <script src="assets/js/site-config.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/contact-form.js" defer></script>
+</body>
+</html>

@@ -112,7 +112,6 @@ PASO 4: ACTUALIZAR CÓDIGO (20 min)
 Ya no necesitas cambiar esto, está listo:
 
 ✅ Email:     info@avtservicios.com
-✅ Teléfono:  +51 (1) 234-5678
 ✅ WhatsApp:  +51 987 654 321
 ✅ Ubicación: Lima, Perú (cobertura en toda la ciudad)
 ✅ Horario:   Lun-Vie: 9:00-18:00 | Sábado: 9:00-13:00
@@ -291,7 +290,6 @@ Ubicaciones:
 
 Datos:
   Email:    info@avtservicios.com
-  Tel 1:    +51 (1) 234-5678
   Tel 2:    +51 987 654 321
   Ubicación: Lima, Perú
 

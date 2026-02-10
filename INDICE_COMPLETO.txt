@@ -151,7 +151,6 @@ Contacto                /contacto           /app/contacto/page.tsx      - Mapa (
 ✅ Header y Footer profesionales
 ✅ Datos de contacto agregados:
    - Email: info@avtservicios.com
-   - Teléfono: +51 (1) 234-5678
    - WhatsApp: +51 987 654 321
    - Ubicación: Lima, Perú
    - Horario: Lun-Vie 9-18, Sáb 9-13
