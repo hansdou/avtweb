@@ -778,6 +778,33 @@ main {
   gap: 1rem;
 }
 
+.portfolio-stack {
+  display: grid;
+  gap: 2rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.portfolio-shot {
+  margin: 0;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-soft);
+}
+
+.portfolio-shot img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .project-item {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.45fr);
@@ -1270,6 +1297,10 @@ main {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   }
 
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .project-item.is-reverse .project-media,
   .project-item.is-reverse .project-details {
     order: initial;
@@ -1342,6 +1373,10 @@ main {
   .grid.cards-4,
   .contact-grid,
   .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid {
     grid-template-columns: 1fr;
   }
 
