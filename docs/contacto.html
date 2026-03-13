@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; frame-src https://challenges.cloudflare.com; connect-src 'self' https://api.avtsac.com https://challenges.cloudflare.com; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
   <meta name="description" content="Contacta a AVT Servicios Generales para evaluar tu proyecto de saneamiento o infraestructura en Lima.">
   <title>Contacto | AVT Servicios Generales</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +17,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" data-nav>
-        <span class="brand-mark" aria-hidden="true">AVT</span>
+        <img class="brand-logo" src="assets/images/icons/brand-logo.png" alt="AVT Servicios Generales">
         <span class="brand-text">
           <span class="brand-title">Servicios Generales</span>
           <span class="brand-subtitle">Saneamiento e infraestructura</span>
@@ -98,29 +101,31 @@
         <div class="form-wrap">
           <div id="formStatus" class="status-box" role="status" aria-live="polite"></div>
 
-          <form id="contactForm" method="POST" action="https://formspree.io/f/your-form-id" novalidate>
+          <form id="contactForm" method="POST" novalidate>
             <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_subject" value="Nueva consulta desde sitio HTML AVT">
+            <input type="text" name="website" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="form_started_at" value="">
+            <input type="hidden" name="js_enabled" value="false">
 
             <div class="form-grid">
               <div class="field">
                 <label for="nombre">Nombre completo *</label>
-                <input class="input" id="nombre" name="nombre" type="text" required autocomplete="name">
+                <input class="input" id="nombre" name="nombre" type="text" required autocomplete="name" minlength="3" maxlength="120">
               </div>
               <div class="field">
                 <label for="email">Correo electrónico *</label>
-                <input class="input" id="email" name="email" type="email" required autocomplete="email">
+                <input class="input" id="email" name="email" type="email" required autocomplete="email" maxlength="120" inputmode="email">
               </div>
             </div>
 
             <div class="form-grid">
               <div class="field">
                 <label for="telefono">Teléfono</label>
-                <input class="input" id="telefono" name="telefono" type="tel" autocomplete="tel">
+                <input class="input" id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" pattern="[0-9+()\-\s]{7,20}">
               </div>
               <div class="field">
                 <label for="empresa">Empresa</label>
-                <input class="input" id="empresa" name="empresa" type="text" autocomplete="organization">
+                <input class="input" id="empresa" name="empresa" type="text" autocomplete="organization" maxlength="120">
               </div>
             </div>
 
@@ -139,7 +144,12 @@
 
             <div class="field">
               <label for="mensaje">Mensaje *</label>
-              <textarea class="textarea" id="mensaje" name="mensaje" required minlength="20" placeholder="Describe tu necesidad, ubicación y plazos estimados."></textarea>
+              <textarea class="textarea" id="mensaje" name="mensaje" required minlength="20" maxlength="2000" placeholder="Describe tu necesidad, ubicación y plazos estimados."></textarea>
+            </div>
+
+            <div class="field">
+              <label>Verificación de seguridad *</label>
+              <div id="turnstileWidget" class="turnstile-box"></div>
             </div>
 
             <div class="form-actions">
@@ -197,6 +207,7 @@
 
   <script src="assets/js/site-config.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
   <script src="assets/js/contact-form.js" defer></script>
 </body>
 </html>

@@ -1,6 +1,18 @@
 ﻿(function () {
   const config = window.SITE_CONFIG || {};
 
+  function protectAgainstFraming() {
+    if (window.top === window.self) return;
+
+    document.documentElement.style.display = 'none';
+
+    try {
+      window.top.location = window.self.location.href;
+    } catch (error) {
+      window.self.location = window.self.location.href;
+    }
+  }
+
   function setCurrentYear() {
     const year = String(new Date().getFullYear());
     document.querySelectorAll('.js-current-year').forEach((el) => {
@@ -316,7 +328,45 @@
     });
   }
 
+  function setupPortfolioToggles() {
+    const grids = document.querySelectorAll('.portfolio-grid');
+    if (!grids.length) return;
+
+    grids.forEach((grid) => {
+      const shots = Array.from(grid.children);
+      if (shots.length <= 4) return;
+
+      const extraShots = shots.slice(4);
+      extraShots.forEach((shot) => {
+        shot.hidden = true;
+        shot.setAttribute('data-portfolio-extra', 'true');
+      });
+
+      const toggleWrap = document.createElement('div');
+      toggleWrap.className = 'portfolio-toggle-wrap';
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'btn btn-outline portfolio-toggle';
+      button.setAttribute('aria-expanded', 'false');
+      button.textContent = 'Ver más fotos';
+
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        extraShots.forEach((shot) => {
+          shot.hidden = expanded;
+        });
+        button.setAttribute('aria-expanded', String(!expanded));
+        button.textContent = expanded ? 'Ver más fotos' : 'Ver menos fotos';
+      });
+
+      toggleWrap.appendChild(button);
+      grid.insertAdjacentElement('afterend', toggleWrap);
+    });
+  }
+
   function init() {
+    protectAgainstFraming();
     setCurrentYear();
     setContactData();
     setActiveNav();
@@ -324,6 +374,7 @@
     setupMobileMenu();
     setupServiceModal();
     setupProjectGalleryModal();
+    setupPortfolioToggles();
   }
 
   document.addEventListener('DOMContentLoaded', init);
